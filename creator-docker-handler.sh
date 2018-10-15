@@ -22,7 +22,7 @@ function create_repos_map {
     done
 }
 
-function create_file {
+function create_handler_file {
     file="phpstorm-url-handler"
     script_text=$(cat <<'EOF'
 #!/usr/bin/env bash
@@ -68,7 +68,7 @@ EOF
 }
 
 create_repos_map
-create_file
+create_handler_file
 
 sudo cp phpstorm-url-handler /usr/bin/phpstorm-url-handler
 sudo desktop-file-install phpstorm-url-handler.desktop
